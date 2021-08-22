@@ -1,42 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../css/register.css">
+    <link rel="stylesheet" href="../css/register.css" />
     <title>Register</title>
-</head>
-<body>
+  </head>
+  <body>
     <main>
-        <h1>Fill The Form Below</h1>
-        <p>Choose ther right service</p>
-        <form class="register__form">
-            <label>Enter Full Name</label>
-            <input placeholder="Full Name" class="input">
-            <label>Email Address</label>
-            <input type="email" placeholder="Email Address" class="input">
-            <label>Enter Phone Number</label>
-            <input placeholder="Phone Number" type="tel" class="input">
-            <label>Home Address</label>
-            <input placeholder="Home Address" class="input">
-            <label>Select Insurance Service</label>
-            <select class="input">
-                <option>Health </option>
-                <option>Life </option>
-                <option>Property</option>
-            </select>
-
-            <p style="color: white; font-size: 14px; margin-bottom: 20px;">Proceed to checkout page and complete your application right away</p>
-            <button>Proceed</button>
-        </form>
+      <h1>Fill The Form Below</h1>
+      <p>Choose ther right service</p>
+      <form class="register__form" id="register_form">
+        <label>Enter Full Name</label>
+        <input
+          placeholder="Full Name"
+          required
+          class="input"
+          id="app_fullname"
+        />
+        <label>Email Address</label>
+        <input
+          type="email"
+          placeholder="Email Address"
+          id="app_email"
+          class="input"
+          required
+        />
+        <label>Enter Phone Number</label>
+        <input
+          placeholder="Phone Number"
+          type="tel"
+          class="input"
+          id="app_phone"
+          required
+        />
+        <label>Home Address</label>
+        <input
+          placeholder="Home Address"
+          class="input"
+          id="app_address"
+          required
+        />
+        <label>Select Insurance Service</label>
+        <select class="input" id="app_type" required>
+          <option>Health</option>
+          <option>Life</option>
+          <option>Property</option>
+        </select>
+        <p style="color: white; font-size: 14px; margin-bottom: 20px">
+          Proceed to checkout page and complete your application right away
+        </p>
+        <button>Proceed</button>
+      </form>
     </main>
-    <script src="../js/index.js"></script>
-</body>
+    <div class="side"> 
+        <h2>We have a clear procedure</h2>
+        <ul>
+            <li>Make Your Application</li>
+            <li>Get Approval</li>
+            <li>And Start Rocking!</li>
+        </ul>
+    </div>
+    <script>
+      const fullname = document.getElementById("app_fullname");
+      const email = document.getElementById("app_email");
+      const phone = document.getElementById("app_phone");
+      const type = document.getElementById("app_type");
+      const address = document.getElementById("app_address");
+
+      document
+        .getElementById("register_form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          let messageData = {
+            fullname: fullname.value,
+            email: email.value,
+            phone: phone.value,
+            type: type.value,
+            address: address.value,
+          };
+          console.log(messageData);
+
+          fullname.value = "";
+          email.value = "";
+          // alert("hamza    ")
+        });
+    </script>
+    <!-- <script src="../js/index.js"></script> -->
+  </body>
 </html>

@@ -7,28 +7,28 @@
 }
 
 body {
-  /* background-color: whitesmoke; */
-  background-image: linear-gradient( rgba(50, 180, 180, 0.25), rgba(50, 180, 180, 0.25)),
-  url("../images/family.jpg");
+  background-color: whitesmoke;
 width: 100%;
 min-height: 100vh;
-background-color: #cccccc;
 background-position: center;
 background-size: cover;
 background-repeat: no-repeat;
+display: flex;
+align-items: flex-start;
+justify-content: space-between;
 }
 
 main {
-  max-width: 920px;
   padding: 0 20px;
-  margin: 0 auto;
+  flex: 1;
   padding-top: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 100vh;
 }
 h1 {
-  color: white;
+  color: seagreen;
   text-align: center;
   margin: 10px 0;
 }
@@ -36,14 +36,14 @@ h1 {
 main > p {
   text-align: center;
   font-weight: 600;
-  color: #fff;
+  color: #222;
   margin-bottom: 30px;
 }
 
 label {
-  color: #fff;
-  font-size: 13px;
-  margin-bottom: 5px;
+  color: #222;
+  font-size: 11px;
+  margin-bottom: 10px;
 }
 
 .input {
@@ -51,6 +51,7 @@ label {
   margin-bottom: 15px;
   padding: 10px 15px;
   border: none;
+  color: #222;
   width: 100%;
 }
 
@@ -59,7 +60,7 @@ label {
 }
 
 .register__form > button {
-  background-color: teal;
+  background-color: seagreen;
   outline: none;
   border: none;
   color: white;
@@ -76,4 +77,34 @@ option {
   background-color: whitesmoke;
   padding-bottom: 10px;
   margin-bottom: 10px;
+}
+
+
+
+.side{
+  flex: 1;
+  width: 100%;
+  min-height: 100vh;
+  background-color: seagreen;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.side > h2{
+  font-size: 2rem;
+  color: rgb(19, 70, 41);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.side > ul > li{
+  color: rgb(19, 70, 41);
+  margin-top: 5px;
+}
+@media screen and (max-width: 780px) {
+  body{
+    flex-direction: column;
+  }
 }
