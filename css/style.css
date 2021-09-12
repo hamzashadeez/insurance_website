@@ -15,10 +15,9 @@ header {
     url("../images/family.jpg");
   width: 100%;
   min-height: 100vh;
-  background-color: #cccccc;
+  background-color: teal;
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;
   z-index: -1;
 }
 
@@ -134,7 +133,7 @@ header > div > ul > li > a{
 
 .contact_section > form {
   display: flex;
-  min-width: 550px;
+  width: 550px;
   flex-direction: column;
 }
 
@@ -265,7 +264,8 @@ footer{
   }
 
   .contact_section > form {
-    width:340px
+    width:340px;
+    min-width: none;
   }
 
   .services{
@@ -284,5 +284,14 @@ footer{
 
   footer > form {
     margin-top: 20px;
+  }
+}
+
+
+@media screen and (max-width:430px) {
+  
+  .contact_section > form {
+    width:295px;
+    min-width: none;
   }
 }
